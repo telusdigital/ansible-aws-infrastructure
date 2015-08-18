@@ -14,6 +14,8 @@ forge_region: eu-central-1
 forge_bucket: telusdigital-forge
 forge_userdata: I2Nsb3VkLWNvbmZpZwpyZXBvX3VwZGF0ZTogdHJ1ZQpyZXBvX3VwZ3JhZGU6IGFsbAoKcGFja2FnZXM6CiAtIHB5dGhvbi1kZXYKIC0gcHl0aG9uLXBpcAogLSBnaXQKcnVuY21kOgogLSBjdXJsIGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS90ZWx1c2RpZ2l0YWwvZm9yZ2UvbWFzdGVyL2Jvb3RzdHJhcC5weSB8IHB5dGhvbgo=
 
+fallback_mode: false
+
 virtualization_type: hvm
 
 health_check_response_timeout: "{% if autoscale %}2{% else %}5{% endif %}"
