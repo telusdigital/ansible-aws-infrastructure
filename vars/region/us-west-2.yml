@@ -1,6 +1,6 @@
 ---
 subnets: "{{ subnets_all | rejectattr('az', 'equalto', region + 'd') | list }}"
-bootstrap_key: adminkey
+bootstrap_key: adminkey2
 preferred_availability_zone: c
 availability_zones:
   - us-west-2a
