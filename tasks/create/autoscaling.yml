@@ -19,6 +19,7 @@
     image_id: "{{ ami.image_id }}"
     security_groups: "{{ security_group_id['managed'] }},{{ security_group_id[system_role] }}"
     # spot_price: "{{ instance_bid }}"
+    instance_profile_name: autonomous
     user_data: "{{ forge_userdata | b64decode }}"
   when: system_role in autoscale_roles
 
@@ -36,6 +37,7 @@
     vpc_zone_identifier: "{{ vpc.subnets | selectattr('resource_tags.Role', 'equalto', system_role) | join(',', attribute='id') }}"
     tags:
       - Environment: "{{ environment_tier }}"
+      - Project:     "{{ project }}"
       - Role:        "{{ system_role }}-autoscaled"
       - Name:        "{{ system_role }}.{{ project }}-{{ environment_tier }}"
       - ForgeRegion: "{{ forge_region }}"

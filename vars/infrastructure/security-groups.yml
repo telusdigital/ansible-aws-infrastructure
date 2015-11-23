@@ -133,6 +133,16 @@ security_group:
     rules:
     - { proto: tcp, from_port: 9200, to_port: 9200, cidr_ip: "{{ subnet_prefix }}.0.0/16" }  # Elasticsearch API
     - { proto: tcp, from_port: 9300, to_port: 9300, cidr_ip: "{{ subnet_prefix }}.0.0/16" }  # Elasticsearch Discovery
+  client:
+    description: "Client nodes for Log Storage"
+    rules:
+    - { proto: tcp, from_port: 9200, to_port: 9200, cidr_ip: "{{ subnet_prefix }}.0.0/16" }  # Elasticsearch API
+    - { proto: tcp, from_port: 9300, to_port: 9300, cidr_ip: "{{ subnet_prefix }}.0.0/16" }  # Elasticsearch Discovery
+  master:
+    description: "Master nodes for Log Storage"
+    rules:
+    - { proto: tcp, from_port: 9200, to_port: 9200, cidr_ip: "{{ subnet_prefix }}.0.0/16" }  # Elasticsearch API
+    - { proto: tcp, from_port: 9300, to_port: 9300, cidr_ip: "{{ subnet_prefix }}.0.0/16" }  # Elasticsearch Discovery
   build:
     description: "Build Nodes"
     rules:

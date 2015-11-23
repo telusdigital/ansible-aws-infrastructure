@@ -325,3 +325,53 @@ subnets_all:
       'Project': "{{ project }}"
       'Role':    'metrics'
       'Name':    "{{ project }}-metrics-d"
+
+  - cidr: "{{ subnet_prefix }}.16.0/27"
+    az: "{{ region }}a"
+    resource_tags:
+      'Project': "{{ project }}"
+      'Role':    'client'
+      'Name':    "{{ project }}-client-a"
+  - cidr: "{{ subnet_prefix }}.16.32/27"
+    az: "{{ region }}b"
+    resource_tags:
+      'Project': "{{ project }}"
+      'Role':    'client'
+      'Name':    "{{ project }}-client-b"
+  - cidr: "{{ subnet_prefix }}.16.64/27"
+    az: "{{ region }}c"
+    resource_tags:
+      'Project': "{{ project }}"
+      'Role':    'client'
+      'Name':    "{{ project }}-client-c"
+  - cidr: "{{ subnet_prefix }}.16.96/27"
+    az: "{{ region }}d"
+    resource_tags:
+      'Project': "{{ project }}"
+      'Role':    'client'
+      'Name':    "{{ project }}-client-d"
+
+  - cidr: "{{ subnet_prefix }}.17.0/27"
+    az: "{{ region }}a"
+    resource_tags:
+      'Project': "{{ project }}"
+      'Role':    'master'
+      'Name':    "{{ project }}-master-a"
+  - cidr: "{{ subnet_prefix }}.17.32/27"
+    az: "{{ region }}b"
+    resource_tags:
+      'Project': "{{ project }}"
+      'Role':    'master'
+      'Name':    "{{ project }}-master-b"
+  - cidr: "{{ subnet_prefix }}.17.64/27"
+    az: "{{ region }}c"
+    resource_tags:
+      'Project': "{{ project }}"
+      'Role':    'master'
+      'Name':    "{{ project }}-master-c"
+  - cidr: "{{ subnet_prefix }}.17.96/27"
+    az: "{{ region }}d"
+    resource_tags:
+      'Project': "{{ project }}"
+      'Role':    'master'
+      'Name':    "{{ project }}-master-d"
