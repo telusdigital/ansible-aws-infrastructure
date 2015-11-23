@@ -19,3 +19,5 @@
 - { include: create/autoscaling.yml, has_load_balancer: False, system_role: preview,        when: "'preview' in required_systems" }
 - { include: create/autoscaling.yml, has_load_balancer: False, system_role: logs,           when: "'logs' in required_systems" }
 - { include: create/autoscaling.yml, has_load_balancer: False, system_role: metrics,        when: "'metrics' in required_systems" }
+- { include: create/autoscaling.yml, has_load_balancer: False, system_role: client,         when: "'client' in required_systems" }
+- { include: create/autoscaling.yml, has_load_balancer: False, system_role: master,         when: "'master' in required_systems" }

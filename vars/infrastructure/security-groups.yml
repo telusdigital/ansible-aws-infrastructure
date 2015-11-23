@@ -92,6 +92,7 @@ security_group:
     rules:
     - { proto: tcp, from_port: 6081,  to_port: 6081,  group_id: "{{ security_group_id['application']|default(-1) }}" }
     - { proto: tcp, from_port: 6379,  to_port: 6379,  group_id: "{{ security_group_id['application']|default(-1) }}" }
+    - { proto: tcp, from_port: 6379,  to_port: 6379,  cidr_ip:  10.0.0.0/8 }
     - { proto: tcp, from_port: 26379, to_port: 26379, group_id: "{{ security_group_id['application']|default(-1) }}" }
   database:
     description: "Database Nodes"
@@ -103,6 +104,7 @@ security_group:
     - { proto: tcp, from_port: 8086,  to_port: 8086,  group_id: "{{ security_group_id['application']|default(-1) }}" }
     - { proto: tcp, from_port: 26379, to_port: 26379, group_id: "{{ security_group_id['application']|default(-1) }}" }
     - { proto: tcp, from_port: 27017, to_port: 27017, group_id: "{{ security_group_id['application']|default(-1) }}" }
+    - { proto: tcp, from_port: 27017, to_port: 27017, cidr_ip:  10.0.0.0/8 }
   outbound:
     description: "Outbound Proxy"
     rules:
@@ -130,6 +132,16 @@ security_group:
     - { proto: tcp, from_port: 8099, to_port: 8099, cidr_ip: "{{ subnet_prefix }}.0.0/16" }  # Replication (using protobuf)
   logs:
     description: "Cross-Project Log Storage"
+    rules:
+    - { proto: tcp, from_port: 9200, to_port: 9200, cidr_ip: "{{ subnet_prefix }}.0.0/16" }  # Elasticsearch API
+    - { proto: tcp, from_port: 9300, to_port: 9300, cidr_ip: "{{ subnet_prefix }}.0.0/16" }  # Elasticsearch Discovery
+  client:
+    description: "Client nodes for Log Storage"
+    rules:
+    - { proto: tcp, from_port: 9200, to_port: 9200, cidr_ip: "{{ subnet_prefix }}.0.0/16" }  # Elasticsearch API
+    - { proto: tcp, from_port: 9300, to_port: 9300, cidr_ip: "{{ subnet_prefix }}.0.0/16" }  # Elasticsearch Discovery
+  master:
+    description: "Master nodes for Log Storage"
     rules:
     - { proto: tcp, from_port: 9200, to_port: 9200, cidr_ip: "{{ subnet_prefix }}.0.0/16" }  # Elasticsearch API
     - { proto: tcp, from_port: 9300, to_port: 9300, cidr_ip: "{{ subnet_prefix }}.0.0/16" }  # Elasticsearch Discovery

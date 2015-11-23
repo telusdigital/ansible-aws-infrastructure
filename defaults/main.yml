@@ -32,6 +32,8 @@ health_check_healthy_threshold: 10
 always_use_spot_instance_for_roles:
   - aggregator
   - logs
+  - client
+  - master
   - metrics
   - build
   - preview
@@ -63,8 +65,10 @@ default_instance_type:
   aggregator: m3.medium
   build: m3.medium
   preview: m3.medium
-  logs: hi1.4xlarge
-  metrics: hi1.4xlarge
+  logs: r3.large
+  client: m3.medium
+  master: m1.small
+  metrics: r3.large
 
 fallback_instance_type:
   management: t1.micro
@@ -77,6 +81,8 @@ fallback_instance_type:
   build: m1.small
   preview: m1.small
   logs: hi1.4xlarge
+  client: m3.medium
+  master: m1.small
   metrics: hi1.4xlarge
 
 use_spot_instances_in_environments:

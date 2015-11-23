@@ -12,6 +12,8 @@
 - { include: create/instance.yml, system_role: outbound,       when: "'outbound' in required_systems" }
 - { include: create/instance.yml, system_role: logs,           when: "'logs' in required_systems" }
 - { include: create/instance.yml, system_role: metrics,        when: "'metrics' in required_systems" }
+- { include: create/instance.yml, system_role: client,         when: "'client' in required_systems" }
+- { include: create/instance.yml, system_role: master,         when: "'master' in required_systems" }
 - { include: create/instance.yml, system_role: aggregator,     when: "'aggregator' in required_systems" }
 - { include: create/instance.yml, system_role: build,          when: "'build' in required_systems" }
 - { include: create/instance.yml, system_role: preview,        when: "'preview' in required_systems" }
