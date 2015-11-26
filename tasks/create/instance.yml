@@ -42,7 +42,7 @@
         delete_on_termination: yes
         volume_size: "{{ override_root_volume_size[system_role] if system_role in override_root_volume_size else root_volume_size }}"
 
-    spot_price: "{{ instance_bid[instance_type[system_role]] if environment_tier not in ['production'] or system_role in always_use_spot_instance_for_roles else None }}"
+    spot_price: "{{ instance_bid[instance_type[system_role]] if system_role in use_spot_instances_for_roles else None }}"
     wait: yes
 
     vpc_subnet_id: "{{ vpc.subnets | selectattr('resource_tags.Role', 'equalto', system_role) | selectattr('az', 'equalto', region+preferred_availability_zone) | join(',', attribute='id') }}"
@@ -83,7 +83,7 @@
     - dns
 
 - name: "Assign Elastic IP | DNS Load Balancing | {{ system_role }}"
-  ec2_eip: 
+  ec2_eip:
     state: present
     in_vpc: yes
     region: "{{ region }}"
