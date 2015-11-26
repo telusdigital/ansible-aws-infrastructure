@@ -29,13 +29,6 @@ health_check_interval: "{% if autoscale %}5{% else %}30{% endif %}"
 health_check_unhealthy_threshold: 2
 health_check_healthy_threshold: 10
 
-always_use_spot_instance_for_roles:
-  - aggregator
-  - logs
-  - metrics
-  - build
-  - preview
-
 autoscale_roles:
   - management
   - inbound
@@ -78,11 +71,6 @@ fallback_instance_type:
   preview: m1.small
   logs: hi1.4xlarge
   metrics: hi1.4xlarge
-
-use_spot_instances_in_environments:
-  - next
-  - development
-  - staging
 
 default_instance_bid:
   c1.medium: 0.130
