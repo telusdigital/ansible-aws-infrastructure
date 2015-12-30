@@ -2,13 +2,13 @@
 autodeploy_passthrough_enabled: no
 autoscale: no
 
-elb_ssl_offload: no
-elb_ssl_certificate_name: 'self-signed'
-
-load_balance_prototypes: no
+# Load Balancing
+load_balancer_ssl_offload: no
+load_balancer_ssl_certificate_name: 'self-signed'
 load_balancers_enabled: no
 dns_points_to_load_balancer: "{{ load_balancers_enabled | bool }}"
 
+# DNS Load Balancing
 dns_load_balancing_enabled: no
 dns_load_balanced_roles:
   - application
