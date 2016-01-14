@@ -97,6 +97,16 @@ security_group:
     - { proto: tcp, from_port: 8086,  to_port: 8086,  group_id: "{{ security_group_id['application']|default(-1) }}" }
     - { proto: tcp, from_port: 26379, to_port: 26379, group_id: "{{ security_group_id['application']|default(-1) }}" } # redis sentinel
     - { proto: tcp, from_port: 27017, to_port: 27017, group_id: "{{ security_group_id['application']|default(-1) }}" } # mongodb
+  databaselive:
+    description: "Database Nodes"
+    rules:
+    - { proto: tcp, from_port: 3306,  to_port: 3306,  group_id: "{{ security_group_id['application']|default(-1) }}" } # mysql
+    - { proto: tcp, from_port: 5432,  to_port: 5432,  group_id: "{{ security_group_id['application']|default(-1) }}" } # postgres
+    - { proto: tcp, from_port: 6379,  to_port: 6379,  group_id: "{{ security_group_id['application']|default(-1) }}" } # redis
+    - { proto: tcp, from_port: 8083,  to_port: 8083,  group_id: "{{ security_group_id['application']|default(-1) }}" }
+    - { proto: tcp, from_port: 8086,  to_port: 8086,  group_id: "{{ security_group_id['application']|default(-1) }}" }
+    - { proto: tcp, from_port: 26379, to_port: 26379, group_id: "{{ security_group_id['application']|default(-1) }}" } # redis sentinel
+    - { proto: tcp, from_port: 27017, to_port: 27017, group_id: "{{ security_group_id['application']|default(-1) }}" } # mongodb
   outbound:
     description: "Outbound Proxy"
     rules:

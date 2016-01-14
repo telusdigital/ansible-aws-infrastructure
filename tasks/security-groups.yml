@@ -34,3 +34,4 @@
 - { include: create/security-group.yml, system_role: application,    when: "'inbound' not in required_systems" }
 - { include: create/security-group.yml, system_role: applicationapi, when: "'inbound' not in required_systems" }
 - { include: create/security-group.yml, system_role: applicationq,   when: "'inbound' not in required_systems" }
+- { include: create/security-group.yml, system_role: databaselive,   when: "'databaselive' in required_systems" }

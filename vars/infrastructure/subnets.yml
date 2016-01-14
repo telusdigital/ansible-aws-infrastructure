@@ -176,6 +176,31 @@ subnets_all:
       'Role':    'database'
       'Name':    "{{ project }}-database-d"
 
+  - cidr: "{{ subnet_prefix }}.4.0/27"
+    az: "{{ region }}a"
+    resource_tags:
+      'Project': "{{ project }}"
+      'Role':    'databaselive'
+      'Name':    "{{ project }}-databaselive-a"
+  - cidr: "{{ subnet_prefix }}.4.32/27"
+    az: "{{ region }}b"
+    resource_tags:
+      'Project': "{{ project }}"
+      'Role':    'databaselive'
+      'Name':    "{{ project }}-databaselive-b"
+  - cidr: "{{ subnet_prefix }}.4.64/27"
+    az: "{{ region }}c"
+    resource_tags:
+      'Project': "{{ project }}"
+      'Role':    'databaselive'
+      'Name':    "{{ project }}-databaselive-c"
+  - cidr: "{{ subnet_prefix }}.4.96/27"
+    az: "{{ region }}d"
+    resource_tags:
+      'Project': "{{ project }}"
+      'Role':    'databaselive'
+      'Name':    "{{ project }}-databaselive-d"
+
   - cidr: "{{ subnet_prefix }}.5.0/27"
     az: "{{ region }}a"
     resource_tags:

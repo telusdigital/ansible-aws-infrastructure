@@ -16,7 +16,7 @@ load_balancer:
       application: securewebserver
   database:
     scheme: internal
-    security_groups: ['application', 'database']
+    security_groups: ['application', 'database', 'databaselive']
     listeners:
     - protocol: tcp
       load_balancer_port: 3306

@@ -68,6 +68,7 @@ default_instance_type:
   applicationq: m3.medium
   cache: m3.medium
   database: m3.medium
+  databaselive: m3.medium
   outbound: m3.medium
   aggregator: m3.medium
   build: m3.medium
@@ -83,6 +84,7 @@ fallback_instance_type:
   application: c1.medium
   cache: m1.small
   database: m1.medium
+  databaselive: m1.medium
   outbound: m1.small
   aggregator: m1.small
   build: m1.small
@@ -163,6 +165,7 @@ default_server_types:             # Values in roles/meta/infrastructure/vars/inf
   applicationapi: webserver
   applicationq: webserver
   database: mysql
+  databaselive: mysql
   outbound: squid
 override_server_types: {}
 server_types: "{{ default_server_types.update(override_server_types) }}{% if fallback_server_type %}{{ default_server_types.update(fallback_instance_types) }}{% endif %}{{ default_server_types }}"
