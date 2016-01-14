@@ -52,6 +52,7 @@ autoscale_roles:
   - applicationapi
   - applicationq
   - database
+  - databaselive
   - cache
   - outbound
   - aggregator
