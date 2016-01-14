@@ -7,3 +7,5 @@
 - { include: create/load-balancer.yml, system_role: applicationq,   when: "load_balancers_enabled and environment_tier in ['staging', 'production'] and 'applicationq' in required_systems"}
 - { include: create/load-balancer.yml, system_role: database,       when: "load_balancers_enabled and environment_tier in ['staging', 'production'] and 'database' in required_systems" }
 - { include: create/load-balancer.yml, system_role: outbound,       when: "load_balancers_enabled and environment_tier in ['staging', 'production'] and 'outbound' in required_systems" }
+
+- { include: create/load-balancer.yml, system_role: databaselive,  when: "load_balancers_enabled and environment_tier in ['staging', 'production'] and 'databaselive' in required_systems" }

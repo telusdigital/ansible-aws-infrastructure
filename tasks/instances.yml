@@ -18,5 +18,6 @@
 - { include: create/instance.yml, system_role: build,          when: "'build' in required_systems" }
 - { include: create/instance.yml, system_role: preview,        when: "'preview' in required_systems" }
 
-- { include: create/rds-database.yml, system_role: database, when: "'database' in required_systems and using_rds" }
-- { include: create/elasticache.yml, system_role: cache, when: "'cache' in required_systems and using_elasticache" }
+- { include: create/rds-database.yml, system_role: database,   when: "'database' in required_systems and using_rds" }
+- { include: create/elasticache.yml, system_role: cache,       when: "'cache' in required_systems and using_elasticache" }
+- { include: create/instance.yml, system_role: databaselive,  when: "'databaselive' in required_systems and not using_rds" }
