@@ -15,9 +15,8 @@
     subnets: "{{ vpc.subnets | selectattr('resource_tags.Role', 'equalto', system_role) | map(attribute='id') | list }}"
     cross_az_load_balancing: yes
     health_check:
-      ping_protocol: http
-      ping_port: 80
-      ping_path: "/"
+      ping_protocol: tcp
+      ping_port: "{% for server_type in server_types %}{% if server_type == system_role %}{{ load_balancer[system_role].listeners | selectattr('application', 'equalto', server_types[system_role]) | map(attribute='instance_port') | join () }}{% endif %}{% endfor %}"
       response_timeout: "{{ health_check_response_timeout }}"
       interval: "{{ health_check_interval }}"
       unhealthy_threshold: "{{ health_check_unhealthy_threshold }}"
