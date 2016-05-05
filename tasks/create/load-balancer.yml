@@ -17,7 +17,7 @@
     health_check:
       ping_protocol: "{ health_check_protocol }"
       ping_port: 80
-      ping_path: "{ health_check_ping_port }"
+      ping_path: "{{ health_check_ping_path }}"
       response_timeout: "{{ health_check_response_timeout }}"
       interval: "{{ health_check_interval }}"
       unhealthy_threshold: "{{ health_check_unhealthy_threshold }}"
