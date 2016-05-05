@@ -40,6 +40,7 @@ health_check_response_timeout: "{% if autoscale %}2{% else %}5{% endif %}"
 health_check_interval: "{% if autoscale %}5{% else %}30{% endif %}"
 health_check_unhealthy_threshold: 2
 health_check_healthy_threshold: 10
+health_check_ping_port: 80
 health_check_protocol: http
 health_check_ping_path: "/"
 

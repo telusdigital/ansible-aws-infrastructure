@@ -14,10 +14,10 @@
     scheme: "{{ load_balancer[system_role].scheme }}"
     subnets: "{{ vpc.subnets | selectattr('resource_tags.Role', 'equalto', system_role) | map(attribute='id') | list }}"
     cross_az_load_balancing: yes
-   health_check:
-      ping_protocol: "{ health_check_protocol }"
-      ping_port: 80
-      ping_path: "{ health_check_ping_port }"
+    health_check:
+      ping_protocol: "{{ health_check_protocol }}"
+      ping_port: "{{ health_check_ping_port }}"
+      ping_path: "{{ health_check_ping_path }}"
       response_timeout: "{{ health_check_response_timeout }}"
       interval: "{{ health_check_interval }}"
       unhealthy_threshold: "{{ health_check_unhealthy_threshold }}"
