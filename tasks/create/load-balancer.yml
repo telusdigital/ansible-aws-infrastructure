@@ -14,7 +14,7 @@
     scheme: "{{ load_balancer[system_role].scheme }}"
     subnets: "{{ vpc.subnets | selectattr('resource_tags.Role', 'equalto', system_role) | map(attribute='id') | list }}"
     cross_az_load_balancing: yes
-   health_check:
+    health_check:
       ping_protocol: "{ health_check_protocol }"
       ping_port: 80
       ping_path: "{ health_check_ping_port }"
