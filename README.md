@@ -38,6 +38,7 @@ Tunables
  * `health_check_unhealthy_threshold` (integer) - The number of consecutive failed health checks that must occur before declaring an EC2 instance unhealthy in seconds
  * `health_check_healthy_threshold` (integer) - The number of consecutive successful health checks that must occur before declaring an EC2 instance healthy in seconds
  * `health_check_ping_port` (integer) - The port health checks test on the EC2 instance
+ * `health_check_protocol` (string) - The protocal to use with the health checks tests
  * `always_use_spot_instance_for_roles` (list of strings) - list of what roles will be build on spot instances
  * `autoscale_roles` (list of strings) - list of what roles will be autoscaled
  * `default_instance_type` (list of key/vaules) - list of what roles should use as an instance type
