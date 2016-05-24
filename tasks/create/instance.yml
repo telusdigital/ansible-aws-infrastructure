@@ -56,6 +56,18 @@
   set_fact:
     instances: "{{ instances.update({system_role: instance.tagged_instances[0].id}) }}{{ instances }}"
 
+- name: Assign Elastic IP
+  ec2_eip:
+    state: present
+    in_vpc: yes
+    region: "{{ region }}"
+    device_id: "{{ instances[system_role] }}"
+    release_on_disassociation: yes
+    public_ip: "{{ static_ip[system_role] }}"
+  when: static_ip is defined and static_ip[system_role] is defined
+  tags:
+    - elastic-ip
+
 - name: "Route53 Record | Public Interface | {{ system_role }}"
   route53:
     command: create
