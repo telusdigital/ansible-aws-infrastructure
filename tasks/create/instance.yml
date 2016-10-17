@@ -4,7 +4,7 @@
     architecture: x86_64
     region: "{{ region }}"
     virtualization_type: "{{ 'paravirtual' if instance_type[system_role] in instance_type_requires_paravirtualization else virtualization_type }}"
-    name: "ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-*"
+    name: "{{ ec2_ami_name }}"
     owner: '099720109477'
     sort: name
     sort_order: descending
