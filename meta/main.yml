@@ -6,3 +6,10 @@ galaxy_info:
   license: MIT
   categories:
     - cloud
+  platforms:
+    - name: Ubuntu
+      versions:
+        - lucid
+        - precise
+        - trusty
+        - utopic
