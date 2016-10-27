@@ -28,7 +28,7 @@ no_inbound:
     rules:
     - { proto: tcp, from_port: 80,    to_port: 80,    cidr_ip: 0.0.0.0/0 }
     - { proto: tcp, from_port: 443,   to_port: 443,   cidr_ip: 0.0.0.0/0 }
-    - { proto: tcp, from_port: 81,    to_port: 81,    cidr_ip: "{{ '0.0.0.0/0' if autodeploy_passthrough_enabled else '127.0.0.1/32' }}" }
+    - { proto: tcp, from_port: 81,    to_port: 81,    cidr_ip: "{{ '192.30.252.0/22' if autodeploy_passthrough_enabled else '127.0.0.1/32' }}" }
   applicationapi:
     description: "Applicationapi Nodes"
     rules:
