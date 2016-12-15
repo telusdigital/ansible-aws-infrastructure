@@ -180,5 +180,3 @@ vpc_peering_from: "{{ project }}"
 vpc_peering_to: []
 
 open_to_internal_traffic_roles: []
-
-ec2_ami_id: "ami-d9e4eace"
