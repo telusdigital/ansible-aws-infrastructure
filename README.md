@@ -46,7 +46,6 @@ Tunables
  * `fallback_instance_type` (list of key/vaules) - list of what instance type should be used if we are falling back (ie spot prices are spiked)
  * `use_spot_instances_in_environments` (list of strings) - list of environment tiers that should use spot instances
  * `default_instance_bid` (list of key/vaules) - list of instance sizes and what the max bid should be for it
- * `instance_type_requires_paravirtualization` (list of strings) - list of instance types that require paravirtualization (instead of HVM)
  * `override_instance_type` (list of key/vaules) - list of roles and instance types to use
  * `override_instance_bid` (list of key/vaules) - list of instance types to use and their max bids
  * `override_root_volume_size` (list of key/vaules) - list of roles and the max root volume size
@@ -57,6 +56,7 @@ Tunables
  * `vpc_peering_enabled` (boolean) - if VPC peering is enabled
  * `vpc_peering_from` (string) - what to peer from (usually this project)
  * `vpc_peering_to` (list of string) - list of vpcs to connect too
+ * `ec2_ami_id` (string) - id of the ami you want to use
 
 Dependencies
 ------------
@@ -84,3 +84,4 @@ Contributors
 * Ben Visser
 * Kinnan Kwok
 * Royston Tong
+* Alex Podobnik
