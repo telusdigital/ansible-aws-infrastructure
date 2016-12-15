@@ -1,4 +1,4 @@
---- 
+---
 environment_tier: staging
 default_region: us-west-2
 region: "{% if override_region != '' %}{{ override_region }}{% else %}{{ default_region }}{% endif %}"
