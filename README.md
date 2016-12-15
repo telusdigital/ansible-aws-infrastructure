@@ -80,7 +80,7 @@ Contributors
 * [Chris Olstrom](https://colstrom.github.io/) | [e-mail](mailto:chris@olstrom.com) | [Twitter](https://twitter.com/ChrisOlstrom)
 * Steven Harradine
 * Justin Scott
-* Aaron Pederson
+* [Aaron Pederson](https://aaronpederson.github.io) | [e-mail](mailto:aaronpederson@gmail.com) | [Twitter](https://twitter.com/GunFuSamurai)
 * Ben Visser
 * Kinnan Kwok
 * Royston Tong
