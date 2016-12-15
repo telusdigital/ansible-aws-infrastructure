@@ -181,4 +181,4 @@ vpc_peering_to: []
 
 open_to_internal_traffic_roles: []
 
-ec2_ami_id: "ami-61074c01"
+ec2_ami_id: "ami-69912409"
