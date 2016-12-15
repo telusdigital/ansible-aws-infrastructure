@@ -1,0 +1,5 @@
+---
+preferred_availability_zone: a
+availability_zones:
+  - ap-northeast-2a
+  - ap-northeast-2c
