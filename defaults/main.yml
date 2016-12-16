@@ -158,6 +158,7 @@ override_instance_type: {}
 override_instance_bid: {}
 override_root_volume_size: {}
 override_region: ''
+override_ec2_ami_id: ''
 
 default_server_types:             # Values in roles/meta/infrastructure/vars/infrastrucutre/load-balancers.yml
   application: webserver
