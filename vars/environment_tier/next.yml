@@ -1,4 +1,4 @@
---- 
+---
 environment_tier: next
 default_region: eu-west-1
 region: "{% if override_region != '' %}{{ override_region }}{% else %}{{ default_region }}{% endif %}"

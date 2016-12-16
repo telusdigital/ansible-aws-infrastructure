@@ -1,0 +1,5 @@
+---
+preferred_availability_zone: b
+availability_zones:
+  - ca-central-1a
+  - ca-central-1b
