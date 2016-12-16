@@ -3,3 +3,5 @@ environment_tier: next
 default_region: eu-west-1
 region: "{% if override_region != '' %}{{ override_region }}{% else %}{{ default_region }}{% endif %}"
 dns_points_to_load_balancer: no
+default_ec2_ami_id: "ami-290c2a5a"
+ec2_ami_id: "{% if override_ec2_ami_id != '' %}{{ override_ec2_ami_id }}{% else %}{{ default_ec2_ami_id }}{% endif %}"

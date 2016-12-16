@@ -1,16 +1,4 @@
 ---
-- name: Identify Base Image
-  ec2_ami_find:
-    architecture: x86_64
-    region: "{{ region }}"
-    virtualization_type: "{{ 'paravirtual' if instance_type[system_role] in instance_type_requires_paravirtualization else virtualization_type }}"
-    name: "{{ ec2_ami_name }}"
-    owner: '099720109477'
-    sort: name
-    sort_order: descending
-    sort_end: 1
-  register: base_image
-
 - name: "Place Spot Request for EC2 Instance | {{ system_role }}"
   ec2:
     region: "{{ region }}"
@@ -28,7 +16,7 @@
       ForgeRegion: "{{ forge_region }}"
       ForgeBucket: "{{ forge_bucket }}"
 
-    image: "{{ base_image.results[0].ami_id }}"
+    image: "{{ ec2_ami_id }}"
     instance_type: "{{ instance_type[system_role] }}"
     exact_count: 1
     count_tag:

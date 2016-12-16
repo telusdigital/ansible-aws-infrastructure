@@ -154,22 +154,11 @@ default_instance_bid:
   t2.micro: 0.013
   t2.small: 0.026
 
-instance_type_requires_paravirtualization:
-  - c1.medium
-  - c1.xlarge
-  - m1.large
-  - m1.medium
-  - m1.small
-  - m1.xlarge
-  - m2.2xlarge
-  - m2.4xlarge
-  - m2.xlarge
-  - t1.micro
-
 override_instance_type: {}
 override_instance_bid: {}
 override_root_volume_size: {}
 override_region: ''
+override_ec2_ami_id: ''
 
 default_server_types:             # Values in roles/meta/infrastructure/vars/infrastrucutre/load-balancers.yml
   application: webserver
@@ -192,5 +181,3 @@ vpc_peering_from: "{{ project }}"
 vpc_peering_to: []
 
 open_to_internal_traffic_roles: []
-
-ec2_ami_name: "ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-*"
