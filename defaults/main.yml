@@ -194,3 +194,4 @@ vpc_peering_to: []
 open_to_internal_traffic_roles: []
 
 ec2_ami_name: "telus-base-ami*"
+ec2_ami_owner: "self"
