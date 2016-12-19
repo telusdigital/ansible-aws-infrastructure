@@ -47,16 +47,18 @@ Tunables
  * `use_spot_instances_in_environments` (list of strings) - list of environment tiers that should use spot instances
  * `default_instance_bid` (list of key/vaules) - list of instance sizes and what the max bid should be for it
  * `instance_type_requires_paravirtualization` (list of strings) - list of instance types that require paravirtualization (instead of HVM)
- * `override_instance_type` (list of key/vaules) - list of roles and instance types to use
- * `override_instance_bid` (list of key/vaules) - list of instance types to use and their max bids
- * `override_root_volume_size` (list of key/vaules) - list of roles and the max root volume size
+ * `override_instance_type` (list of key/values) - list of roles and instance types to use
+ * `override_instance_bid` (list of key/values) - list of instance types to use and their max bids
+ * `override_root_volume_size` (list of key/values) - list of roles and the max root volume size
  * `override_region` (string) - allows you to build a box in a region other than that specified in the configs
  * `default_server_types` (list of enumeration | webserver, securewebserver, mysql, postgresql, mongodb, alternativewebserver, alternativesecurewebserver) - defines each type of role and what its default role is (for opening security groups)
- * `override_server_types` (list of key/vaules) - list of server role what instances that should be
+ * `override_server_types` (list of key/values) - list of server role what instances that should be
  * `roles_needing_public_ip` (list of string) - list of roles needing public ip
  * `vpc_peering_enabled` (boolean) - if VPC peering is enabled
  * `vpc_peering_from` (string) - what to peer from (usually this project)
  * `vpc_peering_to` (list of string) - list of vpcs to connect too
+ * `ec2_ami_name` (string) - name of the ec2 AMI
+ * `ec2_ami_owner` (string) - ID of the AMI owner
 
 Dependencies
 ------------
@@ -84,3 +86,4 @@ Contributors
 * Ben Visser
 * Kinnan Kwok
 * Royston Tong
+* Alex Podobnik

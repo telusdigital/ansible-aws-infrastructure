@@ -5,7 +5,7 @@
     region: "{{ region }}"
     virtualization_type: "{{ 'paravirtual' if instance_type[system_role] in instance_type_requires_paravirtualization else virtualization_type }}"
     name: "{{ ec2_ami_name }}"
-    owner: '099720109477'
+    owner: "{{ ec2_ami_owner }}"
     sort: name
     sort_order: descending
     sort_end: 1
