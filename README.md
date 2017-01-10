@@ -32,6 +32,7 @@ Tunables
  * `forge_region` (string) - valid aws region to build in
  * `forge_bucket` (string) - s3 bucket name to find the playbooks for forge in
  * `forge_userdata` (64bit encoded string) - aws bootstrap code
+ * `amazon_inspector_scan` (string) - amazon inspector scan tag
  * `virtualization_type` (enumeration | hvm, paravirtual) - the type of virtualization
  * `health_check_response_timeout` (integer) - how long to wait till check times out in seconds
  * `health_check_interval` (integer) - how long to wait between checks in seconds

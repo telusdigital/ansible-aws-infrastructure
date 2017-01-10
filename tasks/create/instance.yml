@@ -27,6 +27,7 @@
       Name:        "{{ system_role }}.{{ project }}-{{ environment_tier }}"
       ForgeRegion: "{{ forge_region }}"
       ForgeBucket: "{{ forge_bucket }}"
+      AmazonInspectorScan: "{{ amazon_inspector_scan }}"
 
     image: "{{ base_image.results[0].ami_id }}"
     instance_type: "{{ instance_type[system_role] }}"
