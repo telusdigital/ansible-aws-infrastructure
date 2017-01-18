@@ -11,7 +11,7 @@
   elasticache:
     state: present
 
-    name: "{{ project }}-{{ environment_tier }}"
+    name: "{{ elasticache_name }}"
     engine: "{{ elasticache_engine }}"
     node_type: "cache.{{ instance_type[system_role] }}"
     num_nodes: 2
