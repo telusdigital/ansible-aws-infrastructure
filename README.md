@@ -28,6 +28,7 @@ Tunables
  * `rds_database_backup_retention` (integer) - how long to keep data in days
  * `using_elasticache` (boolean) - use AWS Elastic Cache
  * `elasticache_engine` (enumeration | memcached, redis) - the engine to use in the elasti cache
+ * `elasticache_name` (string) - the name to be used by the elasticache engine (aws limit 20 characters)
  * `fallback_server_type` (boolean) - to use fallback server type or not
  * `forge_region` (string) - valid aws region to build in
  * `forge_bucket` (string) - s3 bucket name to find the playbooks for forge in
