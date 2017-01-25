@@ -28,6 +28,7 @@ rds_database_backup_retention: 30
 using_elasticache: no
 # [memcached, redis]
 elasticache_engine: redis
+elasticache_name: "{{ project }}-{{ environment_tier }}"
 
 fallback_server_type: no
 forge_region: eu-central-1
