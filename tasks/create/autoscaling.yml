@@ -34,9 +34,9 @@
     launch_config_name: "{{ project }}-{{ system_role }}-{{ timestamp }}"
     load_balancers: "{% if has_load_balancer %}{{ project }}-{{ system_role }}{% else %}{{ [] }}{% endif %}"
     name: "{{ project }}-{{ system_role }}"
-    min_size: 3
-    max_size: 9
-    desired_capacity: 3
+    min_size: "{{ autoscale_min[system_role] }}"
+    max_size: "{{ autoscale_max[system_role] }}"
+    desired_capacity: "{{ autoscale_desire[system_role] }}"
     vpc_zone_identifier: "{{ vpc.subnets | selectattr('resource_tags.Role', 'equalto', system_role) | join(',', attribute='id') }}"
     tags:
       - Environment: "{{ environment_tier }}"

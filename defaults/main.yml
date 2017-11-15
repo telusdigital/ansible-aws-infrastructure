@@ -72,6 +72,55 @@ autoscale_roles:
   - logs
   - metrics
 
+autoscale_min:
+  inbound: 3
+  application: 3
+  applicationapi: 3
+  applicationq: 3
+  database: 3
+  database1: 3
+  database2: 3
+  database3: 3
+  cache: 3
+  outbound: 3
+  aggregator: 3
+  build: 3
+  preview: 3
+  logs: 3
+  metrics: 3
+autoscale_max:
+  inbound: 9
+  application: 9
+  applicationapi: 9
+  applicationq: 9
+  database: 9
+  database1: 9
+  database2: 9
+  database3: 9
+  cache: 9
+  outbound: 9
+  aggregator: 9
+  build: 9
+  preview: 9
+  logs: 9
+  metrics: 9
+autoscale_desire:
+  inbound: 3
+  application: 3
+  applicationapi: 3
+  applicationq: 3
+  database: 3
+  database1: 3
+  database2: 3
+  database3: 3
+  cache: 3
+  outbound: 3
+  aggregator: 3
+  build: 3
+  preview: 3
+  logs: 3
+  metrics: 3
+
 default_instance_type:
   management: m3.medium
   inbound: c3.large
